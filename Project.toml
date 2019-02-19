@@ -1,0 +1,10 @@
+name = "TwitterUploadMedia"
+uuid = "d3af42ec-fd83-50d2-b28d-a9753dfd8b2d"
+authors = ["KAWASE Hiroya <hash.a5ebec@gmail.com>"]
+version = "0.1.0"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
