@@ -5,8 +5,7 @@ using Base64
 TwitterUploadMedia.twitterauth(ENV["CONSUMER_KEY"],
                 ENV["CONSUMER_SECRET"],
                 ENV["ACCESS_TOKEN"],
-                ENV["ACCESS_TOKEN_SECRET"]
-    )
+                ENV["ACCESS_TOKEN_SECRET"])
 
 @testset "POST media/upload" begin
     postmediaupload = post_media_upload(media_data=base64encode(open("lena.png")))
