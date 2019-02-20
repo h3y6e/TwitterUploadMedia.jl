@@ -18,6 +18,6 @@ Media(object::Dict) =
             get(object, "image_type", nothing),
             get(object, "w", nothing),
             get(object, "h", nothing)
-            )
+    )
 
 Media(response::Vector) = Media[Media(x) for x in response]

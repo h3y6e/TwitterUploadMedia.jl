@@ -6,7 +6,7 @@ endpoint_tuple = [
         (:post_oauth, :post_media_subtitles_create, "subtitles/create.json", nothing)
 ]
 
-#dynamically build methods
+#dynamically build
 for (verb, func, endp, t) in endpoint_tuple
     @eval begin
             function ($func)(;kwargs...)

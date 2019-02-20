@@ -2,9 +2,10 @@ module TwitterUploadMedia
 
 using OAtuth
 using JSON
-using Base64
-using Twitter: get_oauth, post_oauth
-import DataFrames: DataFrame
+using Twitter: twitterauth,
+        get_oauth,
+        post_oauth,
+        DataFrame
 
 export  get_media_upload,
         post_media_upload,
