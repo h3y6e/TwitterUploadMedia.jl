@@ -1,18 +1,23 @@
-# Documentation: http://docs.travis-ci.com/user/languages/julia/
 language: julia
 os:
-  - linux
-  - osx
+- linux
+- osx
 julia:
-  - 1.0
-  - 1.1
-  - nightly
+- 1.0
+- 1.1
+- nightly
 matrix:
   allow_failures:
-    - julia: nightly
+  - julia: nightly
   fast_finish: true
 notifications:
   email: false
 after_success:
-  - julia -e 'using Pkg; Pkg.add("Coverage"); using Coverage; Codecov.submit(process_folder())'
-  - julia -e 'using Pkg; Pkg.add("Coverage"); using Coverage; Coveralls.submit(process_folder())'
+- julia -e 'using Pkg; Pkg.add("Coverage"); using Coverage; Codecov.submit(process_folder())'
+- julia -e 'using Pkg; Pkg.add("Coverage"); using Coverage; Coveralls.submit(process_folder())'
+env:
+  global:
+  - secure: C4a92BvbYUXpKIvzPdjK5ZYOlWIk9qk4bSGUMml6UcC+fgPJhV1n6KZS345NstW1xKsv0lvK+dbjhdT2T2YkOSzHahh6GddvmFDITfP5MDxBU7Ht+B/F7OrOaMv4KfVV7peEoL8I1tGvAPvH63izt0gK50uZIJqSrZAglhjl4RWO60khXRlARSToPDz1XNKzGtFezQi1e7TC3wIOGelDoF5LlAoezZ1/jRId6Tiws+IBG9wU6kt4PHFD/LwGnnlJLjTF5Bx0De/HG7KsM8A3XMFuad+L+d3E0OXg7VmomtHkLc59KMsfLOpKFrjVzryY0gdplNlEU9gPnop16fsLxqs1n9nJBRkhRE1S1HujWyUBoJOTh3uBiabsjavt3pH9J7Fkg2FuJ6xZd6ZXaFs12O7039wwevZjeh0GnVzlBAL2GG4s+BjD4j+fn2bOkOGq+pO4d5EzvioyczB5XWPsRLM5+F30AIgcLmG94YXIwCaJg+/Ovilkz3mdl3Ec1QWZlmGVXF0jZnmbgZIIQvbNzOXmYHQRULSPGI4GMXJdEldLWpGjVOgBcu1uor7jAUI5lqDKxddkDVij5dUOFBEo7jx3VW8XG4Y2KcuKqiRFfFI65Bgx102kfVmC5Qo36GkPYGN2I8poqAz1Bv7FVn1Log81vY6tRx5G9wlGxmEHj6o=
+  - secure: mUuELpI2+PMexTEkgnUFemm1BaY1F7zw49Vjnopzu16j/sIM3Nm9OlsDkoBeR+KgAnIMsMTOKqbbDRmzHNVwOqiW1heZv8bSM07V/d33lvnZZjQx2qWjaYJ8jDA8z4AEjAYfVIcrogHuT5vlObDza4RC1KHhewRI4IzxE1+SV5MjMKdhmBpSwIaywWwMKYf9wP3qUgFrXRa2AM0hFONDJQXkwf+JVdbMgRtT32oNSBkuBu26pZCywgsWnBnjlkcXrppORP6UHDO4jlph+Z378Yd2e84hPvV+xe359fXQW2wnSDmw0Mok2HSOHyc1fNGONSvhHhQqIIY4vMP9t/ZCxWef7FCTV/5TzeGNpwmt4gE2o7v399TOGjAjzA4kzIBmu/sZwwi+PbMDF0WKDV1AL3f9NBnuKeMAVC/1WbKbb/3unV6BVwajsNZYKNGMjnetuYsA9mL9PC9QcGr2nnLY3zETRaquuXTcmADDznEDABQh4Poqagi1VG/zh25BfSXcR1iB/OfpIiykya7DrK8ZdKFm8tUB6pjZt8XMPFdHynY1Km7dB1KAAJGvPoPu20SeXARv+t7h1i4IXIHpByGZ6xUk1XTRZGx501Jf2hlgbV0gKpJJVd9gFBllh6zgJ/PLWoZEBfin727QpqcRpOD5vpMX7SL5oq8TE83CKin+9GM=
+  - secure: DmnTqlrGdOCAdI47x+AUHrQ03ljhHEdnBYBpUZxe4fr2MBqPn8Q33ajXbIDI4ZyMl3q2wVCkSeWBjjhOLCQiKeuIE0KSnj7801XADIUlkbkCTSNAAJdtCQCWBxVQNKrnMrQVgKgSf7KfmRjR5hfXnTHPfKEHVIM541pI4AlTY+y53PcFr6C7ZAjzq8BXlxOl7TgU2Z3QjE0sIVDgn4PSJZ5X2//tIsRa7hNXMVsAlxLp7apC2ISiRs9ALNZqScQ2aVPyUI9BqZHsvyvWaJ0tdxuUGO4HkLvUDr5nIPzlTrPohSe+PuhiDnNLTjDMxTlAQIL9dimYcCZdfrLAuuRD8FAUadpwlCxt8mOS56Y8dH2k5QK5rQ10Gq013eJtc7lK/bsZe15q3ogtDSEkR9XX9rwx80k3vMYl/c+L29gLyEUgjpaCDsrHKHEjQxl82O8fARBgSDak4w3Uo3vkZ6JIWELuoYxarF1LCcWLs/aPGe2k5NszGMke6507fdwUTQrlPcSZRVSUCkPOde2fth9xbKGSDlDsXZfB/F2Hn9pOGBxjJs8EIjmQxcXTpTTmRghtJV1LRC7exfO9I+bss25GZ2iitQ8oXNPpfM5e8PRYYJsbDaKpq10WrPOT8/AkwwA2RIE8vqjSnejdw6joyV4IG7KSxqNrRGIgViNJHAEMw9Y=
+  - secure: mNmS7DWxlsaNP6ma2Yla38ctae+wg4OcZoCYcvJrm9+CWLcB9Gj4A9Xvje5WqEfoIWmnTNQlO7/Q8HoUjGpcooe/oqkfVAJQE9PBzy94aYSQWgpTg/fI/g/lHh2Y+v7EWpZGFZUKa3dFiPrO5PfqAg/UKP/jSmNRbxnzIPhOJCRxRqMrhhR9Trri076tRxqELsLNsaIcRgEqWEHDxbwYiIFbMPgXsx3eutoGCvBhnYh+vNuBT+MJITz8vVxXMVQH1mEq5ACVr3mUY9NL91A3SqsKvOg0l7PrN7s+a9B8VeGIG0ou1/bXVNESQXdNF/cxMBGmrETuy5scVKoZtV5NTXwPlWWHOSgM5zQnNmjG7fjz1QnmaK0+plscXkyl8UeZCFT6Eb6cfTQRMCaLPFNCHNe20tZjO0iK8oaM/M7/HziDZG+jzWjb5m/jw02+tQ0GO5qE4CPnR02sTtXkOUmcFd45r2qgI93Uzma5frvjNV7jCRZLM7i3YY4AbwWNocQZkYK4MGVT3ezfxm8M5JzIygL3DLR9SIh7sKJRCyhGwNqkNQ/Xvfdun/9gC8AxT7uxjAx/257BUXSOtiqxohWmeyz2ZAkq8Z/fUWcz/h4aTtzseB5LjsV+GLvLSGmzEzNU+54cjcShWoZ14hbX+3ECx6Uh2jjEDXf0wzm8LpS/Oac=
