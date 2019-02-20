@@ -12,8 +12,8 @@ TwitterUploadMedia.jl is NOT official package.
 ## Note
 We recommend using [Twitter.jl](https://github.com/randyzwitch/Twitter.jl) at the same time.  
 If we choose not to use it, say
-```bash
-Using TwitterUploadMedia
+```julia
+using TwitterUploadMedia
 
 TwitterUploadMedia.twitterauth(ENV["CONSUMER_KEY"],
                 ENV["CONSUMER_SECRET"],
