@@ -5,7 +5,8 @@ using JSON
 using Twitter: twitterauth,
         get_oauth,
         post_oauth,
-        DataFrame
+        DataFrame,
+        TwitterType
 
 export  get_media_upload,
         post_media_upload,

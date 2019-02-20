@@ -1,12 +1,12 @@
 # Media response object
 mutable struct Media <: TwitterType
-    media_id::Union{Int, Void}
-    media_id_string::Union{String, Void}
-    size::Union{Int, Void}
-    expires_after_secs::Union{Int, Void}
-    image_type::Union{String, Void}
-    w::Union{Int, Void}
-    h::Union{Int, Void}
+    media_id::Union{Int, Nothing}
+    media_id_string::Union{String, Nothing}
+    size::Union{Int, Nothing}
+    expires_after_secs::Union{Int, Nothing}
+    image_type::Union{String, Nothing}
+    w::Union{Int, Nothing}
+    h::Union{Int, Nothing}
 end
 
 # Methods to convert JSON/Dict to Twitter types
