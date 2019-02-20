@@ -1,6 +1,6 @@
 module TwitterUploadMedia
 
-using OAtuth
+using OAuth
 using JSON
 using Twitter: twitterauth,
         get_oauth,
